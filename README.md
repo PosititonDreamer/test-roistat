@@ -1,5 +1,10 @@
 # test-roistat
 
+## Node version
+```
+v14.18.3
+```
+
 ## Project setup
 ```
 npm install
