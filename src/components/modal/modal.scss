@@ -1,0 +1,57 @@
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+
+  &__content {
+    padding: 20px;
+    background: white;
+    position: relative;
+    color: var(--error-color);
+    font-size: 12px;
+  }
+
+  &__chief {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 20px;
+    align-items: center;
+    color: var(--primary);
+    padding-bottom: 15px;
+  }
+  &__select {
+    width: 200px;
+    padding: 5px 10px;
+    border: 1px solid var(--primary);
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    left: 101%;
+    background: var(--error-color);
+    border: none;
+    padding: 5px 10px;
+    color: var(--white);
+    cursor: pointer;
+    transition: background .2s ease;
+    &:hover {
+      background: var(--pink);
+    }
+  }
+}

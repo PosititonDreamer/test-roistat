@@ -1,0 +1,39 @@
+.input-block {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 20px;
+  position: relative;
+  padding-bottom: 15px;
+  align-items: center;
+  color: var(--primary);
+  transition: color .2s ease;
+
+  &--error {
+    color: var(--error-color);
+  }
+
+  &__input {
+    width: 200px;
+    transform: translateX(0);
+    border: 1px solid var(--primary);
+    transition: border-color .2s ease;
+    padding: 5px 10px;
+    &--error {
+      animation: inputError .3s ease;
+      border-color: var(--error-color);
+    }
+  }
+
+  &__error {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@keyframes inputError {
+  20% {transform: translateX(4px)}
+  40% {transform: translateX(-4px)}
+  60% {transform: translateX(2px)}
+  80% {transform: translateX(-2px)}
+}

@@ -1,0 +1,47 @@
+.home-page {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-gap: 20px;
+  min-height: 100vh;
+  position: relative;
+
+  &__table {
+    width: 70%;
+    border: 2px solid var(--primary);
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    position: relative;
+    height: max-content;
+
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid var(--primary);
+    p {
+      padding: 5px 30px;
+    }
+  }
+
+  &__table-line {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    z-index: 2;
+  }
+
+  &__button {
+    margin-inline: auto;
+  }
+
+}

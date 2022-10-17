@@ -1,0 +1,43 @@
+$animation-delay: 1;
+$dot-width: 100;
+$dot-count: 10;
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: var(--home-background);
+  &__item {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: var(--primary);
+    @for $i from 1 through $dot-count {
+      &:nth-child(#{$i}) {
+        width: #{$dot-width}px;
+        height: #{$dot-width}px;
+        animation: dotAnimate #{$animation-delay}s infinite linear;
+      }
+      $animation-delay: $animation-delay + 0.5;
+      $dot-width: $dot-width + 30;
+    }
+  }
+}
+@keyframes dotAnimate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+
+}
